@@ -57,15 +57,26 @@
     margin-bottom: 70px;
   }
   &__image {
+    padding: 0 32px;
+
+    @include medium {
+      padding: 0;
+    }
+
     img {
       max-width: 100%;
     }
   }
 
   &__content {
-    margin-left: 2rem;
+    width: 100%;
+    padding: 24px 32px 0 32px;
+
+    @include medium {
+      padding: 0;
+    }
     &-title {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
     &-desc {
       font-style: normal;

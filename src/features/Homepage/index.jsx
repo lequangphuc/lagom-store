@@ -137,10 +137,10 @@ function Homepage(props) {
 
       {/* Our Mission */}
       <Row justify="center" className="mission container">
-        <Col span={8} className="mission__image">
+        <Col span={8} md={8} xs={24} className="mission__image">
           <img src={"/images/mission.jpg"} />
         </Col>
-        <Col span={8} className="mission__content">
+        <Col span={8} md={8} xs={24} className="mission__content">
           <h3 className="mission__content-title">OUR NEW MISSION</h3>
           <p className="mission__content-desc">
             We inspire your journey to perform at your best. We study the
