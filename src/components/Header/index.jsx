@@ -71,13 +71,14 @@ function HeaderComponent() {
           </Link>
         </Col>
         <Col span={8} className="header__navigation header__nav-secondary">
-          <NavLink to="/wishlist" className="wishlist" style={{ padding: 0 }}>
+          {/* <NavLink to="/wishlist" className="wishlist" style={{ padding: 0 }}>
             <HeartOutlined />
             &nbsp;
             <small>(0)</small>
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/bag">
             <ShoppingOutlined />
+            &nbsp; BAG
           </NavLink>
         </Col>
       </Row>
