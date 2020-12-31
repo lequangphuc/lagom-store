@@ -78,7 +78,6 @@ function HeaderComponent() {
           </NavLink>
           <NavLink to="/bag">
             <ShoppingOutlined />
-            &nbsp; Giỏ hàng
           </NavLink>
         </Col>
       </Row>
