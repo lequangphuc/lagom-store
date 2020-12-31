@@ -1,0 +1,43 @@
+@import "../../index.scss";
+
+.category {
+  height: 200px;
+
+  @include medium {
+    height: 285px;
+  }
+
+  display: inline-block;
+  background-size: cover;
+  align-items: center;
+  text-transform: uppercase;
+
+  padding: 35px;
+  margin: 1rem;
+  display: flex;
+  box-sizing: border-box;
+
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &__content {
+    color: $white;
+    background: rgba($color: $black, $alpha: 0.6);
+
+    text-align: center;
+    padding: 20px;
+
+    &-name {
+      font-size: 20px;
+      line-height: 27px;
+      margin-bottom: 0.5rem;
+
+      font-weight: bold;
+      letter-spacing: 0.04em;
+    }
+
+    &-action:hover {
+      font-weight: bold;
+    }
+  }
+}

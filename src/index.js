@@ -1,12 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
+import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { Switch, Route } from "react-router-dom";
+
+import Homepage from "./features/Homepage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App>
+      <Switch>
+        <Route exact path="/">
+          <Homepage />
+        </Route>
+      </Switch>
+    </App>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,0 +1,73 @@
+// Color
+$white: #ffffff;
+$black: #000000;
+$primary-color: #185cff;
+$danger-color: #ff4d4f;
+$text-color: #212121;
+$divider-color: #f0f0f0;
+$success-color: #3bb100;
+
+// Mixin
+$xs-width: 576px;
+$md-width: 768px;
+$lg-width: 992px;
+$xl-width: 1200px;
+
+@mixin xsmall {
+  @media (max-width: #{$xs-width -width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (min-width: #{$xs-width}) and (max-width: #{$md-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: #{$md-width}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$lg-width}) {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media (min-width: #{$xl-width}) {
+    @content;
+  }
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+
+  @include xsmall {
+    width: 100%;
+  }
+
+  @include small {
+    width: 540px;
+  }
+
+  @include medium() {
+    width: 720px;
+  }
+
+  @include large() {
+    width: 960px;
+  }
+
+  @include xlarge() {
+    width: 1140px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+}

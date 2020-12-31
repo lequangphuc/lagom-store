@@ -1,31 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { ConfigProvider } from "antd";
-import { Button } from "antd";
-import Header from "./components/Header";
+import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
+import "./App.scss";
+import HeaderComponent from "./components/Header";
+import FooterComponent from "./components/Footer";
+
+function App(props) {
   return (
-    <div className="App">
-      <ConfigProvider>
-        <header className="App-header">
-          <Header />
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <Button>Hello World</Button>
-        </header>
-      </ConfigProvider>
-    </div>
+    <Router>
+      <div className="App">
+        <HeaderComponent />
+        <main style={{ paddingTop: "70px" }}>{props.children}</main>
+        <FooterComponent />
+      </div>
+    </Router>
   );
 }
 

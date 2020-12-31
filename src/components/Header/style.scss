@@ -1,8 +1,83 @@
-.header {
-  font-size: 20px;
+@import "../../index.scss";
 
-  &__notification {
-    font-size: 13px;
-    font-weight: 500;
+header {
+  display: grid;
+  position: fixed;
+  z-index: 1;
+
+  height: 70px;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid $divider-color;
+  background: $white;
+
+  &__navigation {
+    a {
+      color: $text-color;
+      text-transform: uppercase;
+      padding: 0 30px;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    a.active {
+      color: $primary-color;
+    }
+  }
+
+  &__nav-primary {
+    text-align: left;
+    padding: 0 30px;
+  }
+
+  &__nav-secondary {
+    text-align: right;
+  }
+}
+
+.hambuger-content {
+  &__link {
+    display: block;
+    color: $text-color;
+
+    text-transform: uppercase;
+    padding: 24px 30px;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// Other
+button.hamburger-button {
+  border: none;
+  box-shadow: none;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.hambuger-content {
+  a.active {
+    color: $primary-color;
+  }
+  .ant-drawer-content-wrapper {
+    width: 100% !important;
+
+    @include medium {
+      width: 40% !important;
+    }
   }
 }
