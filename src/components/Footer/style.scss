@@ -66,12 +66,14 @@
       display: flex;
       justify-content: space-around;
 
-      margin-top: 12px;
-      margin-bottom: 10px;
+      width: 300px;
+      margin: 0 auto;
+      padding-top: 12px;
+      padding-bottom: 10px;
 
       @include medium {
-        margin-top: 24px;
-        margin-bottom: 20px;
+        padding-top: 24px;
+        padding-bottom: 20px;
       }
 
       font-size: 40px;
