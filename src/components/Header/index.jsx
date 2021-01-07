@@ -56,7 +56,7 @@ function HeaderComponent() {
             {CATEGORIES.map((category) => (
               <NavLink
                 className="hambuger-content__link"
-                to={category.id}
+                to={`category/${category.id}`}
                 key={category.id}
                 onClick={onCloseNav}
               >
