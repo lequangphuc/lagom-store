@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Switch, Route } from "react-router-dom";
 
 import Homepage from "./features/Homepage";
+import ProductOverview from "./features/ProductOverview";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +15,9 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/">
           <Homepage />
+        </Route>
+        <Route path="/category/:id">
+          <ProductOverview />
         </Route>
       </Switch>
     </App>

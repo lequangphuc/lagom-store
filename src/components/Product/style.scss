@@ -1,9 +1,12 @@
 @import "../../index.scss";
 
 .product {
+  display: block;
   position: relative;
   text-align: center;
+
   margin-bottom: 2rem;
+  color: $text-color;
 
   @include medium {
     margin-bottom: 1rem;
@@ -67,6 +70,7 @@
   }
 
   &:hover {
+    color: $text-color;
     @include large {
       transform: translateY(-20px);
       box-shadow: 0 24px 0px 0px white, 0 -24px 0px 0px white,

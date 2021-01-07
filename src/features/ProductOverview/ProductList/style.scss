@@ -1,0 +1,10 @@
+@import "../../../index.scss";
+
+.product-list {
+  margin-top: 80px;
+  margin-bottom: 50;
+
+  @include medium {
+    margin-top: 40;
+  }
+}

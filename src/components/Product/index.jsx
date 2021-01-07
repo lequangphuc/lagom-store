@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import "./style.scss";
 
@@ -14,7 +15,7 @@ function ProductComponent(props) {
   const { product } = props;
 
   return (
-    <div className="product">
+    <Link to="/product/1" className="product">
       <div className="product__image">
         <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
       </div>
@@ -36,7 +37,7 @@ function ProductComponent(props) {
           ADD TO BAG
         </Button>
       </div>
-    </div>
+    </Link>
   );
 }
 
