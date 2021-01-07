@@ -8,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Homepage from "./features/Homepage";
 import ProductOverview from "./features/ProductOverview";
+import ProductDetail from "./features/ProductDetail";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,9 @@ ReactDOM.render(
         </Route>
         <Route path="/category/:id">
           <ProductOverview />
+        </Route>
+        <Route path="/product/:id">
+          <ProductDetail />
         </Route>
       </Switch>
     </App>

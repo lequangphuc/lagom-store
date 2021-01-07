@@ -1,0 +1,107 @@
+@import "../../index.scss";
+
+.product-detail {
+  &__section {
+    &-image {
+      padding: 50px;
+      img {
+        width: 100%;
+      }
+    }
+
+    &-detail {
+      padding: 50px;
+
+      .product-info {
+        position: relative;
+        small {
+          font-size: 16px;
+          line-height: 23px;
+          letter-spacing: 0.03em;
+          font-size: 14px;
+
+          display: block;
+          font-style: normal;
+          font-weight: 300;
+          margin-bottom: 1rem;
+        }
+
+        &__name {
+          font-size: 24px;
+          line-height: 24px;
+          font-weight: 400;
+
+          @include medium {
+            font-size: 38px;
+            line-height: 38px;
+          }
+        }
+
+        &__wishlist {
+          // border: none;
+          border-color: $text-color;
+          border-radius: 50%;
+          box-shadow: none;
+
+          position: absolute;
+          top: 0;
+          right: 0px;
+
+          &:hover {
+            border-color: $danger-color;
+            color: $danger-color;
+          }
+        }
+      }
+
+      .product-actions {
+        display: block;
+
+        @include medium {
+          display: flex;
+        }
+
+        &__wishlist,
+        &__bag {
+          border-color: $text-color;
+          border-radius: 0;
+          text-transform: uppercase;
+
+          height: 36px;
+          font-weight: 500;
+
+          .anticon {
+            font-size: 17px;
+          }
+
+          @include medium {
+            height: 70px;
+          }
+        }
+
+        &__bag {
+          background-color: $text-color;
+          color: $white;
+
+          &:hover {
+            background-color: $white;
+            border-color: $primary-color;
+            color: $primary-color;
+          }
+        }
+
+        &__wishlist {
+          margin-bottom: 1rem;
+
+          @include medium {
+            margin-bottom: 0;
+          }
+          &:hover {
+            background-color: $text-color;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
