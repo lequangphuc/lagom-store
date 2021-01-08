@@ -1,0 +1,15 @@
+@import "../../index.scss";
+
+.not-found-button {
+  border-color: $text-color;
+  background-color: $text-color;
+  color: $white;
+
+  border-radius: 0;
+  height: 42px;
+
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+}

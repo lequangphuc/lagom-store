@@ -73,8 +73,7 @@
     color: $text-color;
     @include large {
       transform: translateY(-20px);
-      box-shadow: 0 24px 0px 0px white, 0 -24px 0px 0px white,
-        24px 0 40px -24px rgba(0, 0, 0, 0.12),
+      box-shadow: 0 24px 0px 0px white, 0 -24px 0px 0px white, 24px 0 40px -24px rgba(0, 0, 0, 0.12),
         -24px 0 40px -24px rgba(0, 0, 0, 0.12);
 
       .product__action,
@@ -86,6 +85,8 @@
 
   &__image {
     padding: 0 20px;
+    height: 230px;
+
     @include small {
       padding: 0 40px;
     }
@@ -94,6 +95,7 @@
     }
     img {
       width: 100%;
+      height: 100%;
     }
   }
 
@@ -113,6 +115,7 @@
       color: rgba(0, 0, 0, 0.6);
       font-size: 12px;
       font-weight: 400;
+      text-transform: uppercase;
     }
 
     &-price {

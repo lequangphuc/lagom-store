@@ -21,10 +21,10 @@ function HeaderComponent() {
   };
 
   const CATEGORIES = [
-    { id: "electronics", name: "electronics" },
-    { id: "jewelery", name: "jewelery" },
-    { id: "men-clothing", name: "men clothing" },
-    { id: "women-clothing", name: "women clothing" },
+    "electronics",
+    "jewelery",
+    "men clothing",
+    "women clothing",
   ];
 
   return (
@@ -56,11 +56,11 @@ function HeaderComponent() {
             {CATEGORIES.map((category) => (
               <NavLink
                 className="hambuger-content__link"
-                to={`category/${category.id}`}
-                key={category.id}
+                to={`/category/${category}`}
+                key={category}
                 onClick={onCloseNav}
               >
-                {category.name}
+                {category}
               </NavLink>
             ))}
           </Drawer>

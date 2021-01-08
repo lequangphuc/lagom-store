@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.scss";
+import { useLocation } from "react-router-dom";
+import productApi from "../../api/productApi";
 import SortBy from "../../components/SortBy";
 import ProductList from "./ProductList";
 
 function ProductOverview() {
-  const [listProducts, setListProducts] = useState([]);
+  const [listProduct, setListProduct] = useState([]);
+  const location = useLocation();
+
+  useEffect(() => {
+    const fetchListProduct = async () => {
+      const path = location.pathname;
+      const listProduct = await productApi.getByCategory(path);
+      setListProduct(listProduct);
+
+      console.log(listProduct);
+    };
+    fetchListProduct();
+  }, [location]);
 
   return (
     <div className="product-overview">
@@ -31,7 +45,7 @@ function ProductOverview() {
         <SortBy />
       </div>
       <div className="product-overview__products">
-        <ProductList />
+        <ProductList listProduct={listProduct} />
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.scss";
 
 import { Row, Col, Button, Divider, List } from "antd";
 import { HeartOutlined, ShoppingOutlined } from "@ant-design/icons";
+import productApi from "../../api/productApi";
+import { useParams } from "react-router-dom";
 
 const desc = [
   {
@@ -24,6 +26,18 @@ const desc = [
 ];
 
 function ProductDetail() {
+  let { productId } = useParams();
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const product = await productApi.get(productId);
+      setProduct(product);
+    };
+
+    fetchProduct();
+  });
+
   return (
     <div className="product-detail">
       <Row className="product-detail__section container">
@@ -33,7 +47,7 @@ function ProductDetail() {
           lg={12}
           className="product-detail__section-image"
         >
-          <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+          <img src={product.image} />
         </Col>
         <Col
           span={12}
@@ -42,9 +56,9 @@ function ProductDetail() {
           className="product-detail__section-detail"
         >
           <div className="product-info">
-            <small>CATEGORY</small>
-            <h1 className="product-info__name">PRODUCT</h1>
-            <p className="product-info__price">$ 300</p>
+            <small>{product.category}</small>
+            <h1 className="product-info__name">{product.title}</h1>
+            <p className="product-info__price">$ {product.price}</p>
           </div>
           <Divider />
           <div className="product-actions">
@@ -67,11 +81,7 @@ function ProductDetail() {
           <Divider />
           <div className="product-desc">
             <h3>DETAILED SPECIFICATIONS</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              ac sapien libero. Integer sed sem vel quam hendrerit sodales. Sed
-              vulputate iaculis nibh, sed ullamcorper mauris dictum et.
-            </p>
+            <p>{product.description}</p>
             <List
               dataSource={desc}
               renderItem={(item) => (

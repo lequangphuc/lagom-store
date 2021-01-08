@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import "../../../../index.scss";
 
 .category {
   height: 200px;
@@ -22,8 +22,6 @@
 
   &__content {
     color: $white;
-    background: rgba($color: $black, $alpha: 0.6);
-
     text-align: center;
     padding: 20px;
 

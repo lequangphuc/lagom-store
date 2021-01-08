@@ -1,137 +1,91 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
 
 import "./style.scss";
 import { Row, Col } from "antd";
 import { RightOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
-import Category from "../../components/Category";
+import Category from "./components/Category";
 import ProductComponent from "../../components/Product";
+import productApi from "../../api/productApi";
 
-Homepage.propTypes = {};
+function Homepage() {
+  const categoryList = [
+    {
+      title: "men clothing",
+      image: "images/men-category.jpg",
+      url: "men-clothing",
+    },
+    {
+      title: "woman clothing",
+      image: "images/women-category.jpg",
+      url: "women-clothing",
+    },
+    {
+      title: "electronics",
+      image: "images/electronic-category.jpg",
+      url: "electronics",
+    },
+    {
+      title: "jewelery",
+      image: "images/jewelery-category.jpg",
+      url: "jewelery",
+    },
+  ];
 
-function Homepage(props) {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const params = {
+        limit: 4,
+      };
+      const products = await productApi.getAll(params);
+      setProducts(products);
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="container">
       <div className="categories">
         <Row justify="center" className="categories__list">
-          <Col span={12} xs={24} sm={24} xl={12}>
-            <Category categoryThumbnail={"/images/category-1.jpg"} />
-          </Col>
-          <Col span={12} xs={24} sm={24} xl={12}>
-            <Category categoryThumbnail={"/images/category-1.jpg"} />
-          </Col>
-        </Row>
-
-        <Row justify="center" className="categories__list">
-          <Col span={12} xs={24} sm={24} xl={12}>
-            <Category categoryThumbnail={"/images/category-1.jpg"} />
-          </Col>
-          <Col span={12} xs={24} sm={24} xl={12}>
-            <Category categoryThumbnail={"/images/category-1.jpg"} />
-          </Col>
+          {categoryList.map((category) => (
+            <Col span={12} xs={24} sm={24} xl={12}>
+              <Category
+                url={category.url}
+                title={category.title}
+                image={category.image}
+              />
+            </Col>
+          ))}
         </Row>
       </div>
 
       {/* Other Feature Products */}
       <div className="feature-products">
         <div className="feature-products__head">
-          <h3>MEN'S BEST SELLERS</h3>
+          <h3>NEW PRODUCTS</h3>
           <div className="feature-products__head-action">
-            <a>
+            <Link to="/category">
               DISCOVER MORE <RightOutlined />
-            </a>
+            </Link>
           </div>
         </div>
 
         <Row className="feature-products__list" justify="center">
-          <Col
-            className="feature-products__item"
-            span={6}
-            md={6}
-            sm={12}
-            xs={12}
-          >
-            <ProductComponent />
-          </Col>
-          <Col
-            className="feature-products__item"
-            span={6}
-            md={6}
-            sm={12}
-            xs={12}
-          >
-            <ProductComponent />
-          </Col>
-          <Col
-            className="feature-products__item"
-            span={6}
-            md={6}
-            sm={12}
-            xs={12}
-          >
-            <ProductComponent />
-          </Col>
-          <Col
-            className="feature-products__item"
-            span={6}
-            md={6}
-            sm={12}
-            xs={12}
-          >
-            <ProductComponent />
-          </Col>
-        </Row>
-      </div>
-
-      {/* Other Feature Products */}
-      <div className="feature-products">
-        <div className="feature-products__head">
-          <h3>MEN'S BEST SELLERS</h3>
-          <div className="feature-products__head-action">
-            <a>
-              DISCOVER MORE <RightOutlined />
-            </a>
-          </div>
-        </div>
-
-        <Row className="feature-products__list" justify="center">
-          <Col
-            className="feature-products__item"
-            span={6}
-            md={6}
-            sm={12}
-            xs={12}
-          >
-            <ProductComponent />
-          </Col>
-          <Col
-            className="feature-products__item"
-            span={6}
-            md={6}
-            sm={12}
-            xs={12}
-          >
-            <ProductComponent />
-          </Col>
-          <Col
-            className="feature-products__item"
-            span={6}
-            md={6}
-            sm={12}
-            xs={12}
-          >
-            <ProductComponent />
-          </Col>
-          <Col
-            className="feature-products__item"
-            span={6}
-            md={6}
-            sm={12}
-            xs={12}
-          >
-            <ProductComponent />
-          </Col>
+          {products.map((product) => (
+            <Col
+              className="feature-products__item"
+              span={6}
+              md={6}
+              sm={12}
+              xs={12}
+            >
+              <ProductComponent product={product} />
+            </Col>
+          ))}
         </Row>
       </div>
 

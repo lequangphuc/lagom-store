@@ -5,14 +5,24 @@ import Product from "../../../components/Product";
 
 import { Row, Col } from "antd";
 
-ProductList.propTypes = {};
+ProductList.propTypes = {
+  listProduct: PropTypes.array,
+};
+
+ProductList.defaultProps = {
+  listProduct: [],
+};
 
 function ProductList(props) {
+  const { listProduct } = props;
+
   return (
     <Row className="product-list container" justify="center">
-      <Col className="feature-products__item" span={6} md={6} sm={12} xs={12}>
-        <Product />
-      </Col>
+      {listProduct.map((product) => (
+        <Col className="feature-products__item" span={6} md={6} sm={12} xs={12}>
+          <Product product={product} />
+        </Col>
+      ))}
     </Row>
   );
 }

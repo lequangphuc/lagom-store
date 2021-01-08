@@ -9,6 +9,8 @@ import { Switch, Route } from "react-router-dom";
 import Homepage from "./features/Homepage";
 import ProductOverview from "./features/ProductOverview";
 import ProductDetail from "./features/ProductDetail";
+import NotFound from "./components/NotFound";
+import Bag from "./features/Bag";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,11 +19,20 @@ ReactDOM.render(
         <Route exact path="/">
           <Homepage />
         </Route>
-        <Route path="/category/:id">
+
+        <Route exact path="/category/:categoryId">
           <ProductOverview />
         </Route>
-        <Route path="/product/:id">
+        <Route exact path="/product/:productId">
           <ProductDetail />
+        </Route>
+
+        <Route exact path="/bag">
+          <Bag />
+        </Route>
+
+        <Route>
+          <NotFound />
         </Route>
       </Switch>
     </App>
