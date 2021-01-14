@@ -4,11 +4,11 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import { RightOutlined } from "@ant-design/icons";
 
-Category.propTypes = {
+CategoryComponent.propTypes = {
   image: PropTypes.string.isRequired,
 };
 
-function Category(props) {
+function CategoryComponent(props) {
   const { image, title, url } = props;
 
   return (
@@ -29,4 +29,4 @@ function Category(props) {
   );
 }
 
-export default Category;
+export default CategoryComponent;

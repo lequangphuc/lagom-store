@@ -5,34 +5,12 @@ import { Row, Col } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
-import Category from "./components/Category";
+import * as ultis from "../../utils/";
+import CategoryComponent from "../../components/Category";
 import ProductComponent from "../../components/Product";
 import productApi from "../../api/productApi";
 
 function Homepage() {
-  const categoryList = [
-    {
-      title: "men clothing",
-      image: "images/men-category.jpg",
-      url: "men-clothing",
-    },
-    {
-      title: "woman clothing",
-      image: "images/women-category.jpg",
-      url: "women-clothing",
-    },
-    {
-      title: "electronics",
-      image: "images/electronic-category.jpg",
-      url: "electronics",
-    },
-    {
-      title: "jewelery",
-      image: "images/jewelery-category.jpg",
-      url: "jewelery",
-    },
-  ];
-
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -51,9 +29,9 @@ function Homepage() {
     <div className="container">
       <div className="categories">
         <Row justify="center" className="categories__list">
-          {categoryList.map((category) => (
-            <Col span={12} xs={24} sm={24} xl={12}>
-              <Category
+          {ultis.CATEGORIES.map((category) => (
+            <Col key={category.url} span={12} xs={24} sm={24} xl={12}>
+              <CategoryComponent
                 url={category.url}
                 title={category.title}
                 image={category.image}
@@ -77,6 +55,7 @@ function Homepage() {
         <Row className="feature-products__list" justify="center">
           {products.map((product) => (
             <Col
+              key={product.id}
               className="feature-products__item"
               span={6}
               md={6}

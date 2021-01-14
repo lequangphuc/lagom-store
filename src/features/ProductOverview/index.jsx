@@ -2,23 +2,36 @@ import React, { useState, useEffect } from "react";
 import "./style.scss";
 import { useLocation } from "react-router-dom";
 import productApi from "../../api/productApi";
-import SortBy from "../../components/SortBy";
+import SortByComponent from "../../components/SortBy";
 import ProductList from "./ProductList";
 
 function ProductOverview() {
   const [listProduct, setListProduct] = useState([]);
+  const [sortBy, setSortBy] = useState("default");
   const location = useLocation();
+
+  console.log(location);
 
   useEffect(() => {
     const fetchListProduct = async () => {
       const path = location.pathname;
       const listProduct = await productApi.getByCategory(path);
-      setListProduct(listProduct);
 
-      console.log(listProduct);
+      if ("default" === sortBy) {
+        setListProduct(listProduct);
+      } else {
+        const newProductList = listProduct.sort((a, b) => {
+          return "ascending" === sortBy ? a.price - b.price : b.price - a.price;
+        });
+        setListProduct(newProductList);
+      }
     };
     fetchListProduct();
-  }, [location]);
+  }, [location, sortBy]);
+
+  function handleSortByChange(value) {
+    setSortBy(value);
+  }
 
   return (
     <div className="product-overview">
@@ -42,7 +55,7 @@ function ProductOverview() {
         </div>
       </div>
       <div className="product-overview__filters">
-        <SortBy />
+        <SortByComponent onChange={handleSortByChange} />
       </div>
       <div className="product-overview__products">
         <ProductList listProduct={listProduct} />

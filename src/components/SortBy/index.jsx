@@ -6,21 +6,19 @@ import { Select } from "antd";
 
 const { Option } = Select;
 
-SortBy.propTypes = {
-  sortBy: PropTypes.string,
+SortByComponent.propTypes = {
   onChange: PropTypes.func,
 };
 
-SortBy.defaultValue = {
-  sortBy: "default",
+SortByComponent.defaultValue = {
   onChange: null,
 };
 
-function SortBy(props) {
-  const { sortBy, onChange } = props;
+function SortByComponent(props) {
+  const { onChange } = props;
 
   function handleSortByChange(value) {
-    if (onChange) return;
+    if (!onChange) return;
 
     onChange(value);
   }
@@ -32,7 +30,7 @@ function SortBy(props) {
         defaultValue="default"
         style={{ width: 200 }}
         bordered={false}
-        onChange={() => handleSortByChange}
+        onChange={handleSortByChange}
       >
         <Option value="default">Sort by: Relevance</Option>
         <Option value="ascending">Price: Low to High</Option>
@@ -42,4 +40,4 @@ function SortBy(props) {
   );
 }
 
-export default SortBy;
+export default SortByComponent;

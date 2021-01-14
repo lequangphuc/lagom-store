@@ -11,6 +11,7 @@ import ProductOverview from "./features/ProductOverview";
 import ProductDetail from "./features/ProductDetail";
 import NotFound from "./components/NotFound";
 import Bag from "./features/Bag";
+import Category from "./features/Category";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,18 +20,18 @@ ReactDOM.render(
         <Route exact path="/">
           <Homepage />
         </Route>
-
-        <Route exact path="/category/:categoryId">
+        <Route path="/category/:categoryId">
           <ProductOverview />
         </Route>
-        <Route exact path="/product/:productId">
+        <Route path="/product/:productId">
           <ProductDetail />
         </Route>
-
-        <Route exact path="/bag">
+        <Route path="/category">
+          <Category />
+        </Route>
+        <Route path="/bag">
           <Bag />
         </Route>
-
         <Route>
           <NotFound />
         </Route>
