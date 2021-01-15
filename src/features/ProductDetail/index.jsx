@@ -80,7 +80,7 @@ function ProductDetail() {
           <Divider />
           <div className="product-desc">
             <h3>DETAILED SPECIFICATIONS</h3>
-            <p>{product.description}</p>
+            <p style={{textAlign: 'justify'}}>{product.description}</p>
             <List
               dataSource={desc}
               renderItem={(item) => (

@@ -1,0 +1,37 @@
+@import "../../index.scss";
+
+.category-page {
+  &__list {
+    display: flex;
+    align-items: center;
+
+    height: 50px;
+    border-bottom: 1px solid $divider-color;
+
+    @include medium {
+      height: 70px;
+    }
+
+    &-links {
+      display: block;
+      color: $text-color;
+
+      text-transform: uppercase;
+      padding: 24px 30px;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    a.active {
+      color: $primary-color;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

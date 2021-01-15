@@ -15,7 +15,6 @@ ProductComponent.propTypes = {
 
 function ProductComponent(props) {
   const { product } = props;
-  console.log(product);
 
   return (
     <Link to={`/product/${product.id}`} className="product">

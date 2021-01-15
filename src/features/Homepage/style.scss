@@ -1,5 +1,14 @@
 @import "../../index.scss";
 
+.homepage {
+  .category-header__image {
+    background-size: contain !important;
+    background-position: right !important;
+    background-repeat: no-repeat !important;
+    background-color: #e3e0df !important;
+  }
+}
+
 .feature-products,
 .mission {
   h3 {

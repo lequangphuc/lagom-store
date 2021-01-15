@@ -7,6 +7,7 @@ import CategoryComponent from "../../components/Category";
 import ProductComponent from "../../components/Product";
 import * as ultis from "../../utils/";
 import "./style.scss";
+import CategoryHeaderComponent from "../../components/CategoryHeader";
 
 function Homepage() {
   const [products, setProducts] = useState([]);
@@ -24,8 +25,12 @@ function Homepage() {
   }, []);
 
   return (
-    <div className="container">
-      <div className="categories">
+    <div className="homepage">
+      <CategoryHeaderComponent
+        category="L A G O M"
+        image="https://curnonwatch.com/pic2-5HG.png"
+      />
+      <div className="categories container">
         <Row justify="center" className="categories__list">
           {ultis.CATEGORIES.map((category) => (
             <Col key={category.url} span={12} xs={24} sm={24} xl={12}>
@@ -40,7 +45,7 @@ function Homepage() {
       </div>
 
       {/* Other Feature Products */}
-      <div className="feature-products">
+      <div className="feature-products container">
         <div className="feature-products__head">
           <h3>NEW PRODUCTS</h3>
           <div className="feature-products__head-action">

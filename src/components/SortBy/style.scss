@@ -1,3 +1,33 @@
-.sort-by {
-  display: block;
+@import "../../index.scss";
+
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a.active {
+    border-bottom: 1px solid $black;
+  }
+
+  &__link {
+    display: none;
+
+    padding: 0 40px;
+    line-height: 50px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $black;
+    }
+
+    @include large {
+      display: inline-block;
+      color: $text-color;
+      line-height: 70px;
+    }
+  }
+
+  .sort-by {
+    display: block;
+  }
 }

@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import productApi from "../../api/productApi";
 import SortByComponent from "../../components/SortBy";
 import ProductList from "./ProductList";
 import "./style.scss";
+import CategoryHeaderComponent from "../../components/CategoryHeader";
 
 function ProductOverview() {
   const [listProduct, setListProduct] = useState([]);
   const [sortBy, setSortBy] = useState("default");
   const location = useLocation();
-
-  console.log(location);
+  const params = useParams();
 
   useEffect(() => {
     const fetchListProduct = async () => {
@@ -35,25 +35,10 @@ function ProductOverview() {
 
   return (
     <div className="product-overview">
-      <div
-        className="product-overview__header"
-        style={{
-          backgroundImage:
-            "url(https://curnonwatch.com/media/catalog/category/collection_men_ring.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-        }}
-      >
-        <div className="container">
-          <h1>Melissani</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            rhoncus lectus id mattis varius. Duis quis velit elit. Donec
-            ultricies, est ut vulputate mollis, nulla ante maximus tortor, ut
-            laoreet ipsum dui vel arcu.
-          </p>
-        </div>
-      </div>
+      <CategoryHeaderComponent
+        category={params.categoryId}
+        image="https://curnonwatch.com/media/catalog/category/MenCuff_1.jpg"
+      />
       <div className="product-overview__filters">
         <SortByComponent onChange={handleSortByChange} />
       </div>
