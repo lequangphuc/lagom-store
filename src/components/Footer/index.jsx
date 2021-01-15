@@ -1,12 +1,9 @@
+import { CarOutlined, LikeOutlined, SafetyOutlined } from "@ant-design/icons";
+import { Col, Row } from "antd";
 import React from "react";
 import "./style.scss";
 
-import { Row, Col, Space } from "antd";
-import { SafetyOutlined, CarOutlined, LikeOutlined } from "@ant-design/icons";
-
-FooterComponent.propTypes = {};
-
-function FooterComponent(props) {
+function FooterComponent() {
   return (
     <footer>
       <div className="footer">

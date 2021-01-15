@@ -1,8 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./style.scss";
-
 import { Select } from "antd";
+import PropTypes from "prop-types";
+import React from "react";
+import "./style.scss";
 
 const { Option } = Select;
 

@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import "./style.scss";
-
-import { Row, Col, Button, Divider, List } from "antd";
 import { HeartOutlined, ShoppingOutlined } from "@ant-design/icons";
-import productApi from "../../api/productApi";
+import { Button, Col, Divider, List, Row } from "antd";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import productApi from "../../api/productApi";
+import "./style.scss";
 
 const desc = [
   {

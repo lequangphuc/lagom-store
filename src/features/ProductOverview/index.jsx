@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import "./style.scss";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import productApi from "../../api/productApi";
 import SortByComponent from "../../components/SortBy";
 import ProductList from "./ProductList";
+import "./style.scss";
 
 function ProductOverview() {
   const [listProduct, setListProduct] = useState([]);

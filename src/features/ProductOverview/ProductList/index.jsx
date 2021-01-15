@@ -1,9 +1,8 @@
-import React from "react";
+import { Col, Row } from "antd";
 import PropTypes from "prop-types";
-import "./style.scss";
+import React from "react";
 import Product from "../../../components/Product";
-
-import { Row, Col } from "antd";
+import "./style.scss";
 
 ProductList.propTypes = {
   listProduct: PropTypes.array,

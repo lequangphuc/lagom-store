@@ -2,12 +2,12 @@ export const CATEGORIES = [
   {
     title: "men clothing",
     image: "images/men-category.jpg",
-    url: "men-clothing",
+    url: "men clothing",
   },
   {
     title: "woman clothing",
     image: "images/women-category.jpg",
-    url: "women-clothing",
+    url: "women clothing",
   },
   {
     title: "electronics",

@@ -1,11 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-
-import "./style.scss";
-
-import { Button } from "antd";
 import { HeartOutlined, ShoppingOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import PropTypes from "prop-types";
+import React from "react";
+import { Link } from "react-router-dom";
+import "./style.scss";
 
 ProductComponent.propTypes = {
   product: PropTypes.object,

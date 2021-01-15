@@ -1,7 +1,6 @@
-import React from "react";
+import { Button, Result } from "antd";
 import PropTypes from "prop-types";
-
-import { Result, Button } from "antd";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import "./style.scss";
 

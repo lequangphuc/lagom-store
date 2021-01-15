@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
-
-import "./style.scss";
-import { Row, Col } from "antd";
 import { RightOutlined } from "@ant-design/icons";
+import { Col, Row } from "antd";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-import * as ultis from "../../utils/";
+import productApi from "../../api/productApi";
 import CategoryComponent from "../../components/Category";
 import ProductComponent from "../../components/Product";
-import productApi from "../../api/productApi";
+import * as ultis from "../../utils/";
+import "./style.scss";
 
 function Homepage() {
   const [products, setProducts] = useState([]);

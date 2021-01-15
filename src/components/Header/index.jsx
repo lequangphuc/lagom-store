@@ -1,14 +1,9 @@
+import { CloseOutlined, MenuOutlined, ShoppingOutlined } from "@ant-design/icons";
+import { Button, Col, Drawer, Row } from "antd";
 import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import * as ultis from "../../utils";
 import "./style.scss";
-import { NavLink, Link } from "react-router-dom";
-
-import { Row, Col, Drawer, Button } from "antd";
-import {
-  ShoppingOutlined,
-  MenuOutlined,
-  CloseOutlined,
-  HeartOutlined,
-} from "@ant-design/icons";
 
 function HeaderComponent() {
   const [visibleNav, setVisibleNav] = useState(false);
@@ -19,13 +14,6 @@ function HeaderComponent() {
   const onCloseNav = () => {
     setVisibleNav(false);
   };
-
-  const CATEGORIES = [
-    "electronics",
-    "jewelery",
-    "men clothing",
-    "women clothing",
-  ];
 
   return (
     <header>
@@ -53,14 +41,14 @@ function HeaderComponent() {
             onClose={onCloseNav}
             visible={visibleNav}
           >
-            {CATEGORIES.map((category) => (
+            {ultis.CATEGORIES.map((category) => (
               <NavLink
                 className="hambuger-content__link"
-                to={`/category/${category}`}
-                key={category}
+                to={`/category/${category.url}`}
+                key={category.url}
                 onClick={onCloseNav}
               >
-                {category}
+                {category.title}
               </NavLink>
             ))}
           </Drawer>

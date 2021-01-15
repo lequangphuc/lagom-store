@@ -1,8 +1,7 @@
+import { Col, Row } from "antd";
 import React from "react";
-import { Row, Col } from "antd";
-
-import * as ultis from "../../utils/";
 import CategoryComponent from "../../components/Category";
+import * as ultis from "../../utils/";
 
 Category.propTypes = {};
 
