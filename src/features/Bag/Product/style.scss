@@ -1,0 +1,76 @@
+@import "../../../index.scss";
+
+.product-inbag {
+  display: flex;
+  align-items: center;
+
+  &__image {
+    width: 120px;
+    height: 115px;
+    margin-right: 1rem;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__main {
+    text-transform: uppercase;
+    width: 100%;
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      h4,
+      p {
+        width: 100%;
+        a {
+          color: $text-color;
+        }
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+
+    &-details {
+      margin-bottom: 20px;
+      font-size: 12px;
+
+      p {
+        margin-bottom: 5px;
+        color: #636363;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: space-between;
+
+      .input-quantity {
+        border: 1px solid $border-color;
+        height: 32px;
+        padding: 0 8px;
+        width: 150px;
+
+        &:focus {
+          border-color: $primary-color;
+          outline: 0;
+        }
+      }
+
+      .btn-remove {
+        border-color: $border-color;
+        border-radius: 50%;
+        box-shadow: none;
+        color: $border-color;
+
+        &:hover {
+          border-color: $primary-color;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

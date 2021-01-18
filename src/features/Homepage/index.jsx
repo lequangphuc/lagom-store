@@ -26,10 +26,7 @@ function Homepage() {
 
   return (
     <div className="homepage">
-      <CategoryHeaderComponent
-        category="L A G O M"
-        image="https://curnonwatch.com/pic2-5HG.png"
-      />
+      <CategoryHeaderComponent category="L A G O M" image="images/banner.jpg" />
       <div className="categories container">
         <Row justify="center" className="categories__list">
           {ultis.CATEGORIES.map((category) => (

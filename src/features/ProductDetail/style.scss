@@ -40,7 +40,7 @@
 
         &__wishlist {
           // border: none;
-          border-color: $text-color;
+          border-color: $border-color;
           border-radius: 50%;
           box-shadow: none;
 
@@ -64,7 +64,7 @@
 
         &__wishlist,
         &__bag {
-          border-color: $text-color;
+          border-color: $border-color;
           border-radius: 0;
           text-transform: uppercase;
 

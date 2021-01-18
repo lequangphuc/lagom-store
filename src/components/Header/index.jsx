@@ -1,5 +1,9 @@
-import { CloseOutlined, MenuOutlined, ShoppingOutlined } from "@ant-design/icons";
-import { Button, Col, Drawer, Row } from "antd";
+import {
+  CloseOutlined,
+  MenuOutlined,
+  ShoppingOutlined,
+} from "@ant-design/icons";
+import { Button, Col, Drawer, Row, Badge } from "antd";
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import * as ultis from "../../utils";
@@ -66,7 +70,7 @@ function HeaderComponent() {
           </NavLink> */}
           <NavLink to="/bag">
             <ShoppingOutlined />
-            &nbsp; BAG
+            &nbsp; BAG <sup>(2)</sup>
           </NavLink>
         </Col>
       </Row>

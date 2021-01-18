@@ -52,8 +52,9 @@
       top: 15px;
       right: 15px;
 
-      border-color: $text-color;
+      border-color: $border-color;
       border-radius: 50%;
+      color: $border-color;
 
       box-shadow: none;
       margin-left: 0.5rem;

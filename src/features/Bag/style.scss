@@ -1,0 +1,130 @@
+@import "../../index.scss";
+
+.bag {
+  .list-product-inbag {
+    margin-right: 40px;
+  }
+  h1 {
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 0;
+
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include medium {
+      flex-direction: row;
+    }
+    margin-bottom: 4rem;
+  }
+
+  &__products {
+    width: 100%;
+
+    @include medium {
+      width: calc(100% - 300px);
+    }
+  }
+  &__sidebar {
+    padding: 20px;
+    background-color: #f6f6f6;
+    width: 100%;
+
+    @include medium {
+      width: 300px;
+    }
+
+    .order-summary {
+      &__group {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+
+        h3,
+        span {
+          margin: 0;
+          font-size: 14px;
+          font-weight: normal;
+        }
+      }
+
+      &__bold {
+        margin-bottom: 20px;
+        h3,
+        span {
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 0.04em;
+        }
+      }
+    }
+
+    .order-actions {
+      text-align: center;
+      &__checkout,
+      &__paypal,
+      &__gpay {
+        border-color: $border-color;
+        border-radius: 0;
+        text-transform: uppercase;
+
+        height: 55px;
+        font-weight: 500;
+      }
+
+      &__checkout {
+        background-color: $text-color;
+        color: $white;
+        font-size: 18px;
+        margin-bottom: 1rem;
+
+        &:hover {
+          background-color: $white;
+          border-color: $primary-color;
+          color: $primary-color;
+        }
+      }
+
+      &__other {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        justify-content: space-between;
+        display: flex;
+      }
+
+      &__paypal,
+      &__gpay {
+        width: 49%;
+        .anticon-google-circle {
+          font-size: 20px;
+          color: $danger-color;
+        }
+        &:hover {
+          background-color: $white;
+          border-color: $primary-color;
+          color: $primary-color;
+        }
+      }
+    }
+
+    .order-desc {
+      font-size: 12px;
+      text-align: justify;
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+}

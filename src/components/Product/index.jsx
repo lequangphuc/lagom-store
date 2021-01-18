@@ -9,7 +9,7 @@ ProductComponent.propTypes = {
   product: PropTypes.object,
 };
 
-ProductComponent.propTypes = {
+ProductComponent.defaultProps = {
   product: {},
 };
 
