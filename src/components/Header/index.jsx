@@ -68,9 +68,10 @@ function HeaderComponent() {
             &nbsp;
             <small>(0)</small>
           </NavLink> */}
+
           <NavLink to="/bag">
-            <ShoppingOutlined />
-            &nbsp; BAG <sup>(2)</sup>
+            <ShoppingOutlined className="bag-icon" />
+            <span className="header__navigation-bag-text">&nbsp;BAG (2)</span>
           </NavLink>
         </Col>
       </Row>
